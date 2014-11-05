@@ -1,4 +1,4 @@
-class BrewUpdate < Formula
+class UnisonBoxClient< Formula
   homepage 'https://github.com/thecontinium/homebrew-unisonbox/'
   url 'https://github.com/thecontinium/homebrew-unisonbox.git'
   version '0.0.1'
@@ -8,7 +8,6 @@ class BrewUpdate < Formula
   depends_on "unisonbox"
   
   def install
-    system "make", "install"
   end
 
   def caveats; <<-EOS.undent
