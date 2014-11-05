@@ -1,4 +1,4 @@
-class UnisonBoxClient< Formula
+class UnisonboxClient< Formula
   homepage 'https://github.com/thecontinium/homebrew-unisonbox/'
   url 'https://github.com/thecontinium/homebrew-unisonbox.git'
   version '0.0.1'
