@@ -1,0 +1,27 @@
+# unisonbox-server
+#
+# $1 - preference file in ~/.unison 
+# $2 - client username 
+# $3 - client ip address 
+# $4 - email address for notification
+#
+# e.g. /usr/local/bin/unisonbox-server unisonbox.prf client-username client-ip notification-email
+
+export PATH=/usr/local/bin:$PATH
+
+if ping -c1 $3 > /dev/null
+then
+  if unison $1 $HOME/UnisonBox ssh://$2@$3/UnisonBox 
+  then
+    echo "Success: notifying"
+    terminal-notifier -title "UnisonBox" -message "Files All Updated Succesfully" 
+    ssh://$2@$3 terminal-notifier -title "UnisonBox" -message "Files All Updated Succesfully" 
+  else
+    echo "Error: notifying and mailing"
+    terminal-notifier -title "UnisonBox" -message "All Files Failed To Update Succesfully" 
+    ssh://$2@$3 terminal-notifier -title "UnisonBox" -message "All Files Failed To Update Succesfully" 
+    echo "Unison Failed: Check /tmp/my.mac.server.unisonbox.err" | mail -s "UnisonBox Failed "  $4 
+  fi
+else
+  echo $3 is unavailable | mail -s "UnisonBox Sync Failed " 
+fi

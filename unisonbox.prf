@@ -1,0 +1,23 @@
+#-batch -logfile /tmp/unison.log /Users/matthewnewland/UnisonBox ssh://matthew@192.168.1.103//Users/matthew/UnisonBox
+
+# run in batch mode
+batch = true
+
+# Log actions to the tmp directory
+logfile=/tmp/unisonbox.log
+
+# Some regexps specifying names to ignore
+ignore = Name .DS_Store
+ignore = Name *.swp
+ignore = Name *.tmp
+
+# Keep a backup copy of every file in a central location
+backuplocation = central
+#default backupdir = ~/.unison/backup 
+backup = Name *
+backupprefix = $VERSION.
+backupsuffix = 
+
+
+
+
