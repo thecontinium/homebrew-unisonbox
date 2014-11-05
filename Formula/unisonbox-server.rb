@@ -10,6 +10,7 @@ class UnisonboxServer< Formula
   
   def install
     bin.install 'unisonbox-server'
+    prefix.install 'unisonbox-server.prf'
   end
 
   def caveats; <<-EOS.undent
@@ -34,8 +35,8 @@ class UnisonboxServer< Formula
       <key>ProgramArguments</key>
       <array>
         <string>/usr/local/bin/unisonbox-server</string>
-        <string>#{prefix}unisonbox.prf</string>
-        <string>server-user</string>
+        <string>#{prefix}/unisonbox.prf</string>
+        <string>client-user</string>
         <string>server-ip</string>
         <string>notification-email</string>
       </array>
