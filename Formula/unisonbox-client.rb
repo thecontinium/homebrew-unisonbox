@@ -8,7 +8,14 @@ class BrewUpdate < Formula
   depends_on "unisonbox"
   
   def install
+    system "make", "install"
   end
+
+  def caveats; <<-EOS.undent
+    Edit the plist file with correct settings. 
+    EOS
+  end
+
 
   #plist_options :startup => true
 
