@@ -10,7 +10,7 @@ class UnisonboxServer< Formula
   
   def install
     bin.install 'unisonbox-server'
-    prefix.install 'unisonbox-server.prf'
+    prefix.install 'unisonbox.prf'
   end
 
   def caveats; <<-EOS.undent
