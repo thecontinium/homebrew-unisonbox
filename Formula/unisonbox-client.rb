@@ -5,7 +5,7 @@ class UnisonboxClient< Formula
 
   skip_clean 'bin'
 
-  depends_on "unisonbox"
+  depends_on "unison"
   
   def install
   end
