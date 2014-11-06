@@ -15,11 +15,11 @@ then
   then
     echo "Success: notifying"
     terminal-notifier -title "UnisonBox" -message "Files All Updated Succesfully" 
-    ssh $2@$3 terminal-notifier -title "UnisonBox" -message "Files All Updated Succesfully" 
+#   ssh $2@$3 terminal-notifier -title "UnisonBox" -message "Files All Updated Succesfully" 
   else
     echo "Error: notifying and mailing"
     terminal-notifier -title "UnisonBox" -message "All Files Failed To Update Succesfully" 
-    ssh $2@$3 terminal-notifier -title "UnisonBox" -message "All Files Failed To Update Succesfully" 
+#   ssh $2@$3 terminal-notifier -title "UnisonBox" -message "All Files Failed To Update Succesfully" 
     echo "Unison Failed: Check /tmp/my.mac.server.unisonbox.err" | mail -s "UnisonBox Failed "  $4 
   fi
 else
