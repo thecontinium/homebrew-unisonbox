@@ -14,7 +14,7 @@ class UnisonboxServer< Formula
   end
 
   def caveats; <<-EOS.undent
-    Edit the plist file with correct settings, and mkdir -p ~/.unison ; cp  #{prefix}/unisonbox.prf ~/.unison
+    Edit the plist file with correct settings, and mkdir -p ~/.unison ; cp  #{prefix}/unisonbox.prf ~/.unison.  Make sure the unison version >= 2.48.1
     EOS
   end
 

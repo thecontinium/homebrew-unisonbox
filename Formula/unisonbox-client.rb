@@ -11,7 +11,7 @@ class UnisonboxClient< Formula
   end
 
   def caveats; <<-EOS.undent
-    Edit the plist file with correct settings. 
+    Edit the plist file with correct settings. Make sure the unison version >= 2.48.1
     EOS
   end
 
