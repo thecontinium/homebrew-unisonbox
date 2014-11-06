@@ -13,12 +13,14 @@ if ping -c1 $3 > /dev/null
 then
   if unison $1 $HOME/UnisonBox ssh://$2@$3/UnisonBox 
   then
-    echo "Success: notifying"
-    echo "Files All Updated Succesfully" | terminal-notifier -title "UnisonBox" 
+    now=`date +"%d/%m/%Y %H:%M:%S`
+    echo $now Success: notifying
+    echo $now Files All Updated Succesfully | terminal-notifier -title "UnisonBox" 
   else
-    echo "Error: notifying and mailing"
-    echo Unison Failed: Check //$(hostname)/tmp/homebrew.mxcl.unisonbox-server.err | terminal-notifier -title "UnisonBox" 
-    echo Unison Failed: Check //$(hostname)/tmp/homebrew.mxcl.unisonbox-server.err | mail -s "UnisonBox Failed "  $4 
+    now=`date +"%d/%m/%Y %H:%M:%S`
+    echo $now Error: notifying and mailing
+    echo $now Unison Failed: Check //$(hostname)/tmp/homebrew.mxcl.unisonbox-server.err | terminal-notifier -title "UnisonBox" 
+    echo $now Unison Failed: Check //$(hostname)/tmp/homebrew.mxcl.unisonbox-server.err | mail -s "UnisonBox Failed "  $4 
   fi
 else
   echo $3 is unavailable | mail -s "UnisonBox Sync Failed " 
