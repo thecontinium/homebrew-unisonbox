@@ -18,9 +18,9 @@ then
 #   ssh $2@$3 terminal-notifier -title "UnisonBox" -message "Files All Updated Succesfully" 
   else
     echo "Error: notifying and mailing"
-    terminal-notifier -title "UnisonBox" -message "All Files Failed To Update Succesfully" 
+    echo Unison Failed: Check //$(hostname)/tmp/homebrew.mxcl.unisonbox-server.err | terminal-notifier -title "UnisonBox" 
 #   ssh $2@$3 terminal-notifier -title "UnisonBox" -message "All Files Failed To Update Succesfully" 
-    echo "Unison Failed: Check /tmp/my.mac.server.unisonbox.err" | mail -s "UnisonBox Failed "  $4 
+    echo Unison Failed: Check //$(hostname)/tmp/homebrew.mxcl.unisonbox-server.err | mail -s "UnisonBox Failed "  $4 
   fi
 else
   echo $3 is unavailable | mail -s "UnisonBox Sync Failed " 

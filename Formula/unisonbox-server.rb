@@ -1,7 +1,7 @@
 class UnisonboxServer< Formula
   homepage 'https://github.com/thecontinium/homebrew-unisonbox/'
   url 'https://github.com/thecontinium/homebrew-unisonbox.git'
-  version '0.0.1'
+  version '0.0.2'
 
   skip_clean 'bin'
 
