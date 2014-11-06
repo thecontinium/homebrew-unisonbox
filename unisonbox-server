@@ -13,11 +13,11 @@ if ping -c1 $3 > /dev/null
 then
   if unison $1 $HOME/UnisonBox ssh://$2@$3/UnisonBox 
   then
-    now=`date +"%d/%m/%Y %H:%M:%S`
+    now=`date +"%d/%m/%Y %H:%M:%S"`
     echo $now Success: notifying
     echo $now Files All Updated Succesfully | terminal-notifier -title "UnisonBox" 
   else
-    now=`date +"%d/%m/%Y %H:%M:%S`
+    now=`date +"%d/%m/%Y %H:%M:%S"`
     echo $now Error: notifying and mailing
     echo $now Unison Failed: Check //$(hostname)/tmp/homebrew.mxcl.unisonbox-server.err | terminal-notifier -title "UnisonBox" 
     echo $now Unison Failed: Check //$(hostname)/tmp/homebrew.mxcl.unisonbox-server.err | mail -s "UnisonBox Failed "  $4 
