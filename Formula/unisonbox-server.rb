@@ -14,7 +14,7 @@ class UnisonboxServer< Formula
   end
 
   def caveats; <<-EOS.undent
-    Edit the plist file with correct settings. 
+    Edit the plist file with correct settings, and mkdir -p ~/.unison ; cp  #{prefix}/unisonbox.prf ~/.unison
     EOS
   end
 
@@ -35,7 +35,7 @@ class UnisonboxServer< Formula
       <key>ProgramArguments</key>
       <array>
         <string>/usr/local/bin/unisonbox-server</string>
-        <string>#{prefix}/unisonbox.prf</string>
+        <string>unisonbox.prf</string>
         <string>client-user</string>
         <string>server-ip</string>
         <string>notification-email</string>
