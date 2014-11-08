@@ -16,7 +16,7 @@ class Unison < Formula
   depends_on 'objective-caml' => :build
 
   # fixed upstream in https://webdav.seas.upenn.edu/viewvc/unison?view=revision&revision=530
-  patch :DATA
+  # patch :DATA
 
   def install
     ENV.j1
