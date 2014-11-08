@@ -20,7 +20,7 @@ then
     now=`date +"%d/%m/%Y %H:%M:%S"`
     echo $now Error: notifying and mailing
     echo $now Unison Failed: Check //$(hostname)/tmp/homebrew.mxcl.unisonbox-server.err | terminal-notifier -title "UnisonBox" 
-    echo $now Unison Failed: Check //$(hostname)/tmp/homebrew.mxcl.unisonbox-server.err | mail -s "UnisonBox Failed "  $4 
+    echo $now Unison Failed: $(tail /tmp/homebrew.mxcl.unisonbox-server.err) | mail -s "UnisonBox Failed "  $4 
   fi
 else
   echo $3 is unavailable | mail -s "UnisonBox Sync Failed " 
