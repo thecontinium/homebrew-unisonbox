@@ -1,11 +1,12 @@
 class UnisonboxClient< Formula
   homepage 'https://github.com/thecontinium/homebrew-unisonbox/'
   url 'https://github.com/thecontinium/homebrew-unisonbox.git'
-  version '0.0.6'
+  version '0.0.8'
 
   skip_clean 'bin'
 
-  depends_on "unison"
+
+  depends_on "thecontinium/unisonbox/unison"
   
   def install
   end
