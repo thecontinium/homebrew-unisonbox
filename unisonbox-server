@@ -1,3 +1,4 @@
+#!/bin/bash
 # unisonbox-server
 #
 # $1 - preference file in ~/.unison 
